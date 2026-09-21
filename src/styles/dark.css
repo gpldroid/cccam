@@ -96,3 +96,12 @@ html[data-theme="light"] .gradient-text{
 html[data-theme="light"] .brand small{
   color:#075985!important;
 }
+
+/* PageSpeed contrast pass — legal and article components */
+html[data-theme="light"] .legal-card a{color:#075985!important}
+html[data-theme="light"] .legal-card strong{color:#0f172a!important}
+html[data-theme="light"] .legal-nav a{color:#334155!important;border-color:#cbd5e1!important}
+html[data-theme="light"] .legal-nav a:hover{color:#0f172a!important;border-color:#94a3b8!important}
+html[data-theme="light"] .post-content a{color:#075985!important}
+html[data-theme="light"] .post-content a:hover{color:#0c4a6e!important}
+html[data-theme="light"] .post-content strong{color:#0f172a!important}
