@@ -1,1 +1,9 @@
-html[data-theme="light"] body{background:#f1f5f9;color:#0f172a;background-image:none}html[data-theme="light"] .panel,html[data-theme="light"] .glass-nav{background:rgba(255,255,255,.92);border-color:#cbd5e1}html[data-theme="light"] .muted{color:#475569}html[data-theme="light"] .field,html[data-theme="light"] .search-box input{background:#fff;color:#0f172a;border-color:#cbd5e1}
+html[data-theme="light"]{color-scheme:light}
+html[data-theme="light"] body{--bg:#f1f5f9;--surface:#fff;--surface-2:#f8fafc;--text:#0f172a;--muted:#475569;--border:rgba(15,23,42,.14);background:#f1f5f9;color:#0f172a;background-image:none}
+html[data-theme="light"] .panel,html[data-theme="light"] .glass-panel,html[data-theme="light"] .glass-nav{background:rgba(255,255,255,.94);border-color:#cbd5e1;box-shadow:0 14px 40px rgba(15,23,42,.08)}
+html[data-theme="light"] .muted,html[data-theme="light"] .footer-grid a{color:#475569}
+html[data-theme="light"] .field,html[data-theme="light"] .search-box input,html[data-theme="light"] .mode-btn,html[data-theme="light"] .tab{background:#fff;color:#0f172a;border-color:#cbd5e1}
+html[data-theme="light"] .post-content p,html[data-theme="light"] .legal-card p{color:#334155}
+html[data-theme="light"] .post-content th{background:#e2e8f0;color:#0f172a}
+html[data-theme="light"] .post-content td{border-color:#cbd5e1}
+html[data-theme="light"] .site-footer{background:#e2e8f0;border-color:#cbd5e1}
