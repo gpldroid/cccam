@@ -1,1 +1,123 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=src/pages/index.html"><title>StreamX</title><script>location.replace('src/pages/index.html')</script></head><body><a href="src/pages/index.html">فتح StreamX</a></body></html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="StreamX - واجهة CCcam و IPTV تجريبية سريعة ومتجاوبة.">
+<title>ستريم إكسبريس | StreamX</title>
+<link rel="icon" href="public/logo.svg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<link rel="stylesheet" href="src/styles/global.css">
+<link rel="stylesheet" href="src/styles/dark.css">
+<style>
+body{font-family:Tajawal,Arial,sans-serif}.glass-panel{background:linear-gradient(135deg,rgba(17,24,39,.78),rgba(11,15,25,.92));backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 50px rgba(0,0,0,.35)}.gradient-text{background:linear-gradient(135deg,#00f2fe,#38ef7d,#9d4edd);-webkit-background-clip:text;color:transparent}.shine{position:relative;overflow:hidden}.toast{position:fixed;bottom:22px;left:22px;z-index:200;padding:12px 18px;border-radius:14px;background:#0f172a;color:#fff;border:1px solid #334155;box-shadow:0 10px 30px #0008}.modal{position:fixed;inset:0;background:#000b;z-index:150;display:flex;align-items:center;justify-content:center;padding:18px}.modal-card{width:min(900px,100%);background:#080d18;border:1px solid #334155;border-radius:24px;padding:18px}.cat-filter.active{background:#06b6d4!important;color:#001018!important}.hidden{display:none!important}@media(max-width:700px){.desktop-nav{display:none}.stats{grid-template-columns:1fr 1fr!important}.playlist-grid{grid-template-columns:1fr!important}}
+</style>
+</head>
+<body class="min-h-screen">
+<header class="glass-nav sticky top-0 z-50">
+<div class="container nav">
+<a href="index.html" class="brand"><img src="public/logo.svg" alt="StreamX" width="42" height="42"><span><b>StreamX</b><small>CCcam & IPTV Pro Hub</small></span></a>
+<nav class="desktop-nav"><button id="nav-cccam" class="tab active">مولد CCcam</button><button id="nav-iptv" class="tab">مكتبة IPTV (GitHub)</button></nav>
+<div class="flex gap-2"><button id="dark-mode-toggle" class="mode-btn" type="button">☀️/🌙</button></div>
+</div>
+</header>
+
+<section class="container hero">
+<div class="hero-grid">
+<div class="panel hero-card">
+<p class="muted">CCcam & IPTV Pro Hub</p>
+<h1>ستريم <span class="gradient-text">إكسبريس</span></h1>
+<p class="muted">واجهة تجريبية أعيد تنظيمها مع الحفاظ على وظائف التبويب، التوليد، البحث، النسخ، الاختبار ومعاينة HLS.</p>
+<div class="tabs"><button id="hero-cccam" class="tab active">مولد CCcam</button><button id="hero-iptv" class="tab">مكتبة IPTV</button></div>
+</div>
+<div class="panel hero-card"><h2>تنبيه الاستخدام</h2><p class="muted">القيم التي يعرضها المولد تجريبية فقط وليست اشتراكات حقيقية. استخدم مصادر البث التي تملك حق الوصول إليها.</p></div>
+</div>
+</section>
+
+<section class="container stats">
+<div class="panel stat"><span class="muted">سيرفرات مولدة اليوم</span><strong id="stat-generated-count">2,148</strong></div>
+<div class="panel stat"><span class="muted">قوائم IPTV</span><strong>50+</strong></div>
+<div class="panel stat"><span class="muted">Ping تجريبي</span><strong id="ping-summary-val">18ms</strong></div>
+<div class="panel stat"><span class="muted">الحالة</span><strong class="text-emerald-400">Online</strong></div>
+</section>
+
+<main class="container py-6">
+<section id="section-cccam">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-5">
+<div class="glass-panel p-6 rounded-3xl">
+<h2 class="text-xl font-black text-white mb-2">توليد بيانات تجريبية</h2>
+<p class="muted text-sm">اختر مدة العرض ثم أنشئ قيماً عشوائية للاختبار.</p>
+<div class="grid grid-cols-3 gap-2 my-6">
+<button class="dur-btn primary" data-hours="24">24 ساعة</button><button class="dur-btn tab" data-hours="48">48 ساعة</button><button class="dur-btn tab" data-hours="72">72 ساعة</button>
+</div>
+<div class="flex gap-4 mb-5 text-sm text-gray-200"><label><input type="radio" name="protocol" value="cccam" checked> CCcam 2.3.2</label><label><input type="radio" name="protocol" value="mgcamd"> Mgcamd</label></div>
+<button id="generate-cccam" class="primary w-full"><i class="fa-solid fa-bolt"></i> توليد بيانات الآن</button>
+<div id="cccam-result" class="hidden mt-5 p-4 rounded-2xl bg-black/30 border border-cyan-900">
+<div class="form-grid"><div><small>Host</small><code id="res-host">—</code></div><div><small>Port</small><code id="res-port">—</code></div><div><small>User</small><code id="res-user">—</code></div></div>
+<div class="mt-3"><small>Password</small><code id="res-pass">—</code></div>
+<pre id="res-code" class="text-cyan-300 mt-4 whitespace-pre-wrap" dir="ltr"></pre>
+<button id="copy-config" class="primary mt-3">نسخ السطر</button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="glass-panel p-6 rounded-3xl h-full">
+<div class="flex items-center justify-between mb-5"><div><h2 class="text-xl font-black text-white">اختبار Ping تجريبي</h2><p class="muted text-sm">لا يتم الاتصال بأي سيرفر حقيقي.</p></div><span id="ping-status-badge" class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs">جاهز</span></div>
+<div class="text-5xl font-black text-cyan-300 mb-6" id="ping-val">18 ms</div>
+<button id="ping-btn" class="primary"><i id="ping-icon" class="fa-solid fa-gauge-high"></i> فحص الاستجابة</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="section-iptv" class="hidden mt-2">
+<div class="glass-panel p-6 rounded-3xl">
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+<div><h2 class="text-2xl font-black text-white">مكتبة IPTV</h2><p class="muted">بيانات عرض عامة وتجريبية. افحص المصدر والترخيص قبل الاستخدام.</p></div>
+<input id="iptv-search" class="field md:w-96" placeholder="ابحث باسم القائمة أو الفئة...">
+</div>
+<div id="cat-filters" class="flex flex-wrap gap-2 my-5"></div>
+<div id="iptv-grid" class="playlist-grid"></div>
+</div>
+</section>
+</main>
+
+<div id="player-modal" class="modal hidden">
+<div class="modal-card">
+<div class="flex items-center justify-between mb-3"><h3 id="modal-title" class="text-white font-black">معاينة</h3><button id="close-modal" class="mode-btn">✕</button></div>
+<video id="video-player" class="w-full rounded-2xl bg-black" controls playsinline></video>
+<p id="video-error" class="hidden text-amber-300 text-sm mt-3">تعذر تشغيل هذا المصدر في المتصفح. قد يكون المصدر غير متاح أو غير متوافق مع HLS/CORS.</p>
+<div class="flex gap-2 mt-3"><button id="copy-modal-url" class="primary">نسخ الرابط</button></div>
+</div>
+</div>
+<footer class="site-footer"><div class="container footer-grid"><div><b class="brand-text">StreamX</b><p class="muted">منصة تقنية بواجهة تجريبية لموارد البث الرقمي.</p></div><div><h3>الموقع</h3><a href="index.html">الرئيسية</a><a href="categories/iptv.html">المقالات</a></div><div><h3>قانوني</h3><a href="../Legal%20pages/terms.html">الشروط</a><a href="../Legal%20pages/Privacy.html">الخصوصية</a></div><div><h3>تنبيه</h3><p class="muted">استخدم الموارد وفق القوانين وحقوق المحتوى.</p></div></div></footer>
+<div id="toast" class="toast hidden"></div>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const playlists=[
+{title:"News World",category:"أخبار",format:"M3U",desc:"قائمة تجريبية للأخبار.",source:"Public Demo",count:"—",updated:"Demo",streamUrl:"https://example.com/news.m3u",sampleTestUrl:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"},
+{title:"Documentary",category:"وثائقي",format:"M3U",desc:"قائمة تجريبية للوثائقيات.",source:"Public Demo",count:"—",updated:"Demo",streamUrl:"https://example.com/doc.m3u",sampleTestUrl:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"},
+{title:"Music Live",category:"موسيقى",format:"M3U",desc:"قائمة تجريبية للموسيقى.",source:"Public Demo",count:"—",updated:"Demo",streamUrl:"https://example.com/music.m3u",sampleTestUrl:"https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"}
+];
+let duration=24, activeCat="all", hls=null, currentUrl="";
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.remove("hidden");clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.add("hidden"),2500)}
+function copyText(text,msg="تم النسخ"){if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(text).then(()=>toast(msg)).catch(()=>fallbackCopy(text,msg))}else fallbackCopy(text,msg)}
+function fallbackCopy(text,msg){const x=document.createElement("textarea");x.value=text;x.style.position="fixed";x.style.opacity="0";document.body.appendChild(x);x.select();try{document.execCommand("copy");toast(msg)}catch(e){toast("تعذر النسخ")}x.remove()}
+function switchTab(tab){const c=tab==="cccam";$("#section-cccam").classList.toggle("hidden",!c);$("#section-iptv").classList.toggle("hidden",c);$$(".tab").forEach(b=>b.classList.remove("active"));(c?$("#nav-cccam"):$("#nav-iptv")).classList.add("active");(c?$("#hero-cccam"):$("#hero-iptv")).classList.add("active")}
+function generate(){const hosts=["demo.streamx.local","example.test","test.streamx.invalid"],host=hosts[Math.floor(Math.random()*hosts.length)],port=[12000,18900,19850][Math.floor(Math.random()*3)],user="demo_"+Math.random().toString(36).slice(2,8),pass="test_"+Math.random().toString(36).slice(2,9),protocol=document.querySelector('input[name="protocol"]:checked').value;const line=protocol==="cccam"?`C: ${host} ${port} ${user} ${pass}`:`M: ${host} ${port} ${user} ${pass}`;$("#cccam-result").classList.remove("hidden");$("#res-host").textContent=host;$("#res-port").textContent=port;$("#res-user").textContent=user;$("#res-pass").textContent=pass;$("#res-code").textContent=line;$("#copy-config").onclick=()=>copyText(line,"تم نسخ بيانات الاختبار");$("#stat-generated-count").textContent=(2149+Math.floor(Math.random()*30)).toLocaleString();toast(`تم إنشاء بيانات تجريبية لمدة ${duration} ساعة`)}
+function ping(){const b=$("#ping-btn"),i=$("#ping-icon"),badge=$("#ping-status-badge");b.disabled=true;i.classList.add("fa-spin");badge.textContent="جاري الفحص...";setTimeout(()=>{const p=Math.floor(Math.random()*15)+14;$("#ping-val").textContent=p+" ms";$("#ping-summary-val").textContent=p+"ms";badge.textContent="ممتاز";b.disabled=false;i.classList.remove("fa-spin");toast("نتيجة الاختبار: "+p+"ms")},800)}
+function render(){const q=($("#iptv-search").value||"").toLowerCase(), data=playlists.filter(x=>(activeCat==="all"||x.category===activeCat)&&(x.title+x.category+x.desc+x.source).toLowerCase().includes(q)),box=$("#iptv-grid");box.innerHTML="";if(!data.length){box.innerHTML='<div class="col-span-full text-center text-gray-400 py-10">لا توجد نتائج مطابقة.</div>';return}data.forEach(x=>{const c=document.createElement("article");c.className="playlist panel";c.innerHTML=`<span class="text-xs text-cyan-300">${x.category} · ${x.format}</span><h3 class="text-white text-lg font-bold mt-2">${x.title}</h3><p class="muted text-sm">${x.desc}</p><div class="actions"><button class="primary copy">نسخ الرابط</button><button class="primary preview">معاينة</button></div>`;c.querySelector(".copy").onclick=()=>copyText(x.streamUrl,"تم نسخ الرابط");c.querySelector(".preview").onclick=()=>openPlayer(x.sampleTestUrl,x.title);box.appendChild(c)})}
+function renderCats(){const cats=["all",...new Set(playlists.map(x=>x.category))],box=$("#cat-filters");box.innerHTML="";cats.forEach(c=>{const b=document.createElement("button");b.className="cat-filter px-4 py-2 rounded-xl text-xs font-bold border border-gray-800 bg-gray-900 text-gray-300"+(c===activeCat?" active":"");b.textContent=c==="all"?"الكل":c;b.onclick=()=>{activeCat=c;renderCats();render()};box.appendChild(b)})}
+function openPlayer(url,title){currentUrl=url;$("#modal-title").textContent="معاينة: "+title;$("#player-modal").classList.remove("hidden");$("#video-error").classList.add("hidden");const v=$("#video-player");if(hls){hls.destroy();hls=null}if(window.Hls&&Hls.isSupported()){hls=new Hls();hls.loadSource(url);hls.attachMedia(v);hls.on(Hls.Events.MANIFEST_PARSED,()=>v.play().catch(()=>{}));hls.on(Hls.Events.ERROR,(_,d)=>{if(d.fatal)$("#video-error").classList.remove("hidden")})}else if(v.canPlayType("application/vnd.apple.mpegurl")){v.src=url;v.play().catch(()=>{})}else $("#video-error").classList.remove("hidden")}
+function closePlayer(){const v=$("#video-player");v.pause();v.removeAttribute("src");v.load();if(hls){hls.destroy();hls=null}$("#player-modal").classList.add("hidden")}
+document.addEventListener("DOMContentLoaded",()=>{$("#nav-cccam").onclick=()=>switchTab("cccam");$("#nav-iptv").onclick=()=>switchTab("iptv");$("#hero-cccam").onclick=()=>switchTab("cccam");$("#hero-iptv").onclick=()=>switchTab("iptv");$$(".dur-btn").forEach(b=>b.onclick=()=>{duration=+b.dataset.hours;$$(".dur-btn").forEach(x=>x.classList.remove("primary"));b.classList.add("primary")});$("#generate-cccam").onclick=generate;$("#ping-btn").onclick=ping;$("#iptv-search").oninput=render;$("#close-modal").onclick=closePlayer;$("#copy-modal-url").onclick=()=>copyText(currentUrl,"تم نسخ رابط المعاينة");$("#player-modal").onclick=e=>{if(e.target.id==="player-modal")closePlayer()};$("#dark-mode-toggle").onclick=()=>{const light=document.documentElement.dataset.theme==="light";document.documentElement.dataset.theme=light?"dark":"light";localStorage.setItem("streamx-theme",light?"dark":"light")};const saved=localStorage.getItem("streamx-theme");if(saved)document.documentElement.dataset.theme=saved;renderCats();render()});
+</script>
+</body>
+</html>
