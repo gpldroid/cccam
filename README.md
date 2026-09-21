@@ -46,3 +46,12 @@ StreamX هو موقع HTML/CSS/JavaScript ثابت، RTL-first، مهيأ للن
 ## الحالة
 
 الإصدار الحالي: **2.1.0**.
+
+## الموقع المنشور
+
+[StreamX — IPTV & CCcam](https://gpldroid.github.io/cccam/)
+
+أدلة الموقع:
+- [تطبيقات IPTV على Android وAndroid TV](https://gpldroid.github.io/cccam/categories/iptv-apps.html)
+- [دليل M3U وM3U8](https://gpldroid.github.io/cccam/posts/iptv-m3u-guide.html)
+- [مكتبات IPTV على GitHub](https://gpldroid.github.io/cccam/posts/iptv-github.html)
