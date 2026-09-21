@@ -1,0 +1,12 @@
+{
+  "name":"StreamX — CCcam & IPTV Pro Hub",
+  "short_name":"StreamX",
+  "lang":"ar",
+  "dir":"rtl",
+  "start_url":"/cccam/",
+  "scope":"/cccam/",
+  "display":"standalone",
+  "theme_color":"#08111f",
+  "background_color":"#08111f",
+  "icons":[{"src":"/cccam/public/logo.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
