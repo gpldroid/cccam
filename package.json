@@ -1,0 +1,13 @@
+{
+  "name": "streamx-cccam-iptv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Modular StreamX CCcam & IPTV directory site",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.1.5"
+  }
+}
