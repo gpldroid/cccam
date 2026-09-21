@@ -2,33 +2,30 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="StreamX — منصة تقنية احترافية لعرض أدوات وموارد CCcam وIPTV التجريبية، مع بحث ومعاينة HLS وواجهة سريعة ومتجاوبة.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="StreamX — منصة تقنية احترافية لموارد CCcam وIPTV التجريبية، مع بحث ومعاينة HLS وواجهة سريعة ومتجاوبة.">
 <meta name="theme-color" content="#08111f">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="StreamX">
 <meta name="application-name" content="StreamX">
+<title>StreamX — CCcam & IPTV Pro Hub</title>
 <link rel="canonical" href="https://gpldroid.github.io/cccam/">
+<link rel="icon" href="public/logo.svg" type="image/svg+xml">
 <link rel="manifest" href="public/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" as="style">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=stylesheet">
+<link rel="stylesheet" href="src/styles/global.css">
+<link rel="stylesheet" href="src/styles/dark.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="StreamX — CCcam & IPTV Pro Hub">
 <meta property="og:description" content="واجهة تقنية احترافية وسريعة لموارد البث التجريبية.">
 <meta property="og:url" content="https://gpldroid.github.io/cccam/">
 <meta property="og:site_name" content="StreamX">
-<title>ستريم إكسبريس | StreamX</title>
-<link rel="icon" href="public/logo.svg">
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<link rel="stylesheet" href="src/styles/global.css">
-<link rel="stylesheet" href="src/styles/dark.css">
-<style>
-body{font-family:Tajawal,Arial,sans-serif}.glass-panel{background:linear-gradient(135deg,rgba(17,24,39,.78),rgba(11,15,25,.92));backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.1);box-shadow:0 20px 50px rgba(0,0,0,.35)}.gradient-text{background:linear-gradient(135deg,#00f2fe,#38ef7d,#9d4edd);-webkit-background-clip:text;color:transparent}.shine{position:relative;overflow:hidden}.toast{position:fixed;bottom:22px;left:22px;z-index:200;padding:12px 18px;border-radius:14px;background:#0f172a;color:#fff;border:1px solid #334155;box-shadow:0 10px 30px #0008}.modal{position:fixed;inset:0;background:#000b;z-index:150;display:flex;align-items:center;justify-content:center;padding:18px}.modal-card{width:min(900px,100%);background:#080d18;border:1px solid #334155;border-radius:24px;padding:18px}.cat-filter.active{background:#06b6d4!important;color:#001018!important}.hidden{display:none!important}@media(max-width:700px){.desktop-nav{display:none}.stats{grid-template-columns:1fr 1fr!important}.playlist-grid{grid-template-columns:1fr!important}}
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"StreamX","url":"https://gpldroid.github.io/cccam/","description":"منصة تقنية احترافية لموارد CCcam وIPTV التجريبية.","inLanguage":"ar","potentialAction":{"@type":"SearchAction","target":"https://gpldroid.github.io/cccam/?q={search_term_string}","query-input":"required name=search_term_string"}}</script></head>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"StreamX","url":"https://gpldroid.github.io/cccam/","description":"منصة تقنية احترافية لموارد CCcam وIPTV التجريبية.","inLanguage":"ar","potentialAction":{"@type":"SearchAction","target":"https://gpldroid.github.io/cccam/?q={search_term_string}","query-input":"required name=SearchAction"}}</script>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.15" defer></script>
+</head>
 <body class="min-h-screen"><a href="#main-content" class="sr-only">تخطي إلى المحتوى الرئيسي</a>
 <header class="glass-nav sticky top-0 z-50">
 <div class="container nav">
@@ -68,7 +65,7 @@ body{font-family:Tajawal,Arial,sans-serif}.glass-panel{background:linear-gradien
 <button class="dur-btn primary" data-hours="24">24 ساعة</button><button class="dur-btn tab" data-hours="48">48 ساعة</button><button class="dur-btn tab" data-hours="72">72 ساعة</button>
 </div>
 <div class="flex gap-4 mb-5 text-sm text-gray-200"><label><input type="radio" name="protocol" value="cccam" checked> CCcam 2.3.2</label><label><input type="radio" name="protocol" value="mgcamd"> Mgcamd</label></div>
-<button id="generate-cccam" class="primary w-full"><i class="fa-solid fa-bolt"></i> توليد بيانات الآن</button>
+<button id="generate-cccam" class="primary w-full">⚡ توليد بيانات الآن</button>
 <div id="cccam-result" class="hidden mt-5 p-4 rounded-2xl bg-black/30 border border-cyan-900">
 <div class="form-grid"><div><small>Host</small><code id="res-host">—</code></div><div><small>Port</small><code id="res-port">—</code></div><div><small>User</small><code id="res-user">—</code></div></div>
 <div class="mt-3"><small>Password</small><code id="res-pass">—</code></div>
@@ -81,7 +78,7 @@ body{font-family:Tajawal,Arial,sans-serif}.glass-panel{background:linear-gradien
 <div class="glass-panel p-6 rounded-3xl h-full">
 <div class="flex items-center justify-between mb-5"><div><h2 class="text-xl font-black text-white">اختبار Ping تجريبي</h2><p class="muted text-sm">لا يتم الاتصال بأي سيرفر حقيقي.</p></div><span id="ping-status-badge" class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs">جاهز</span></div>
 <div class="text-5xl font-black text-cyan-300 mb-6" id="ping-val">18 ms</div>
-<button id="ping-btn" class="primary"><i id="ping-icon" class="fa-solid fa-gauge-high"></i> فحص الاستجابة</button>
+<button id="ping-btn" class="primary">◉ فحص الاستجابة</button>
 </div>
 </div>
 </div>
