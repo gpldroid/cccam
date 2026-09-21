@@ -7,3 +7,9 @@ html[data-theme="light"] .post-content p,html[data-theme="light"] .legal-card p{
 html[data-theme="light"] .post-content th{background:#e2e8f0;color:#0f172a}
 html[data-theme="light"] .post-content td{border-color:#cbd5e1}
 html[data-theme="light"] .site-footer{background:#e2e8f0;border-color:#cbd5e1}
+
+html[data-theme="light"] .text-white{color:#0f172a}
+html[data-theme="light"] .stat strong{color:#0f172a}
+html[data-theme="light"] .modal-card{background:#fff;color:#0f172a}
+html[data-theme="light"] .modal-card .text-white{color:#0f172a}
+html[data-theme="light"] .post-content th{background:#e2e8f0;color:#0f172a}
