@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /src/lib/
 Sitemap: https://gpldroid.github.io/cccam/sitemap.xml
