@@ -1,1 +1,5 @@
 .legal-card a{color:#67e8f9;text-decoration:underline;text-underline-offset:3px}.legal-card strong{color:#fff}.legal-nav{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.legal-nav a{padding:8px 12px;border:1px solid #334155;border-radius:10px;color:#cbd5e1}.legal-nav a:hover{border-color:#22d3ee;color:#fff}
+html[data-theme="light"] .legal-card a{color:#075985!important}
+html[data-theme="light"] .legal-card strong{color:#0f172a!important}
+html[data-theme="light"] .legal-nav a{color:#334155!important;border-color:#cbd5e1!important}
+html[data-theme="light"] .legal-nav a:hover{color:#0f172a!important;border-color:#94a3b8!important}
