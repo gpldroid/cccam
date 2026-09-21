@@ -1,0 +1,1 @@
+export const routes=["/","/src/pages/categories/iptv.html","/src/pages/posts/iptv-github.html","/src/pages/posts/cccam-guide.html","/src/Legal%20pages/about.html","/src/Legal%20pages/contact.html","/src/Legal%20pages/terms.html","/src/Legal%20pages/Privacy.html"];
