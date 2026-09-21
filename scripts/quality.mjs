@@ -1,7 +1,7 @@
 import {readFileSync,readdirSync,statSync} from "node:fs";
 import {join} from "node:path";
 
-const required=["index.html","404.html","sitemap.xml","public/robots.txt","public/site.webmanifest","public/logo.svg"];
+const required=["index.html","404.html","robots.txt","sitemap.xml","public/robots.txt","public/site.webmanifest","public/logo.svg"];
 for(const file of required){if(!statSafe(file))fail("Missing required file: "+file)}
 const html=readFileSync("index.html","utf8");
 for(const pattern of [
