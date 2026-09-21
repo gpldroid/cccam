@@ -23,7 +23,7 @@
 <meta property="og:description" content="واجهة تقنية احترافية وسريعة لموارد البث التجريبية.">
 <meta property="og:url" content="https://gpldroid.github.io/cccam/">
 <meta property="og:site_name" content="StreamX">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"StreamX","url":"https://gpldroid.github.io/cccam/","description":"منصة تقنية احترافية لموارد CCcam وIPTV التجريبية.","inLanguage":"ar","potentialAction":{"@type":"SearchAction","target":"https://gpldroid.github.io/cccam/?q={search_term_string}","query-input":"required name=SearchAction"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"StreamX","url":"https://gpldroid.github.io/cccam/","description":"منصة تقنية احترافية لموارد CCcam وIPTV التجريبية.","inLanguage":"ar","potentialAction":{"@type":"SearchAction","target":"https://gpldroid.github.io/cccam/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
 <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.15" defer></script>
 </head>
 <body class="min-h-screen"><a href="#main-content" class="sr-only">تخطي إلى المحتوى الرئيسي</a>
@@ -31,7 +31,7 @@
 <div class="container nav">
 <a href="index.html" class="brand"><img src="public/logo.svg" alt="StreamX" width="42" height="42"><span><b>StreamX</b><small>CCcam & IPTV Pro Hub</small></span></a>
 <nav class="desktop-nav"><button id="nav-cccam" class="tab active">مولد CCcam</button><button id="nav-iptv" class="tab">مكتبة IPTV (GitHub)</button></nav>
-<div class="flex gap-2"><button id="dark-mode-toggle" class="mode-btn" type="button">☀️/🌙</button></div>
+<div class="flex gap-2"><button id="dark-mode-toggle" class="mode-btn" type="button" aria-label="تبديل الوضع الفاتح والداكن">☀️/🌙</button></div>
 </div>
 </header>
 
@@ -88,7 +88,7 @@
 <div class="glass-panel p-6 rounded-3xl">
 <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
 <div><h2 class="text-2xl font-black text-white">مكتبة IPTV</h2><p class="muted">بيانات عرض عامة وتجريبية. افحص المصدر والترخيص قبل الاستخدام.</p></div>
-<input id="iptv-search" class="field md:w-96" placeholder="ابحث باسم القائمة أو الفئة...">
+<input id="iptv-search" class="field md:w-96" type="search" autocomplete="off" aria-label="البحث في مكتبة IPTV" placeholder="ابحث باسم القائمة أو الفئة...">
 </div>
 <div id="cat-filters" class="flex flex-wrap gap-2 my-5"></div>
 <div id="iptv-grid" class="playlist-grid"></div>
@@ -96,9 +96,9 @@
 </section>
 </main>
 
-<div id="player-modal" class="modal hidden">
+<div id="player-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
 <div class="modal-card">
-<div class="flex items-center justify-between mb-3"><h3 id="modal-title" class="text-white font-black">معاينة</h3><button id="close-modal" class="mode-btn">✕</button></div>
+<div class="flex items-center justify-between mb-3"><h3 id="modal-title" class="text-white font-black">معاينة</h3><button id="close-modal" class="mode-btn" type="button" aria-label="إغلاق نافذة المعاينة">✕</button></div>
 <video id="video-player" class="w-full rounded-2xl bg-black" controls playsinline></video>
 <p id="video-error" class="hidden text-amber-300 text-sm mt-3">تعذر تشغيل هذا المصدر في المتصفح. قد يكون المصدر غير متاح أو غير متوافق مع HLS/CORS.</p>
 <div class="flex gap-2 mt-3"><button id="copy-modal-url" class="primary">نسخ الرابط</button></div>
