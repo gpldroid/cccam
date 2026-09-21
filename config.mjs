@@ -1,0 +1,1 @@
+export default {site:{name:"StreamX",url:"https://gpldroid.github.io/cccam/",language:"ar"},paths:{public:"public",source:"src"}};
