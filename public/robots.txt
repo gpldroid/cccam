@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /cccam/src/pages/
-Disallow: /cccam/src/Legal%20pages/
-Disallow: /cccam/src/lib/
-Sitemap: https://gpldroid.github.io/cccam/sitemap.xml
