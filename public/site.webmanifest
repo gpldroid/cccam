@@ -1,6 +1,7 @@
 {
   "name":"StreamX — CCcam & IPTV Pro Hub",
   "short_name":"StreamX",
+  "description":"واجهة تقنية عربية سريعة لموارد وأدلة البث الرقمي التجريبية.",
   "lang":"ar",
   "dir":"rtl",
   "start_url":"/cccam/",
