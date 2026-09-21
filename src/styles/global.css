@@ -276,3 +276,76 @@ html[data-theme="light"] .toast{
   background:#0e7490;
   color:#fff;
 }
+
+/* PageSpeed contrast pass — accessible text, links and controls */
+html[data-theme="light"] .meta-row,
+html[data-theme="light"] .breadcrumb,
+html[data-theme="light"] .footer-bottom{
+  color:#475569!important;
+}
+html[data-theme="light"] .breadcrumb a,
+html[data-theme="light"] .footer-grid a{
+  color:#334155!important;
+}
+html[data-theme="light"] .breadcrumb a:hover,
+html[data-theme="light"] .footer-grid a:hover{
+  color:#0f172a!important;
+}
+html[data-theme="light"] .post-content a,
+html[data-theme="light"] .legal-card a{
+  color:#075985!important;
+}
+html[data-theme="light"] .post-content a:hover,
+html[data-theme="light"] .legal-card a:hover{
+  color:#0c4a6e!important;
+}
+html[data-theme="light"] .post-content strong,
+html[data-theme="light"] .legal-card strong{
+  color:#0f172a!important;
+}
+html[data-theme="light"] .post-content blockquote{
+  background:#e0f2fe!important;
+  color:#334155!important;
+  border-inline-start-color:#0369a1!important;
+}
+html[data-theme="light"] .notice,
+html[data-theme="light"] .result{
+  color:#0f172a!important;
+}
+html[data-theme="light"] .notice p,
+html[data-theme="light"] .result p{
+  color:#334155!important;
+}
+html[data-theme="light"] .result code,
+html[data-theme="light"] .post-content code{
+  color:#0f5f78!important;
+}
+html[data-theme="light"] .field::placeholder,
+html[data-theme="light"] .search-box input::placeholder{
+  color:#64748b!important;
+  opacity:1;
+}
+html[data-theme="light"] .tab{
+  color:#334155!important;
+}
+html[data-theme="light"] .tab.active{
+  background:#0e7490!important;
+  color:#fff!important;
+  border-color:#0e7490!important;
+}
+html[data-theme="light"] .primary{
+  background:#0e7490!important;
+  color:#fff!important;
+}
+html[data-theme="light"] .mode-btn{
+  color:#0f172a!important;
+  background:#fff!important;
+}
+html[data-theme="light"] .mode-btn:hover{
+  background:#f1f5f9!important;
+}
+html[data-theme="light"] .cookie-btn--primary{
+  background:#0e7490!important;
+  border-color:#0e7490!important;
+  color:#fff!important;
+}
