@@ -1,0 +1,3 @@
+Contact: https://github.com/gpldroid/cccam/issues
+Preferred-Languages: ar, en
+Canonical: https://gpldroid.github.io/cccam/public/security.txt
