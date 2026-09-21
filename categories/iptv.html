@@ -42,9 +42,5 @@ document.addEventListener("DOMContentLoaded",()=>{
  if(menuBtn)menuBtn.addEventListener("click",()=>{const open=menu.classList.toggle("open");menuBtn.setAttribute("aria-expanded",String(open));menuBtn.setAttribute("aria-label",open?"إغلاق القائمة":"فتح القائمة")});
  document.addEventListener("click",e=>{if(!e.target.closest(".nav-dropdown"))document.querySelectorAll(".nav-dropdown").forEach(d=>{d.classList.remove("open");const t=d.querySelector(".nav-trigger");if(t)t.setAttribute("aria-expanded","false")})});
  document.querySelectorAll(".mobile-nav a").forEach(a=>a.addEventListener("click",()=>{if(menu){menu.classList.remove("open");if(menuBtn)menuBtn.setAttribute("aria-expanded","false")}}));
- const savedTheme=localStorage.getItem("streamx-theme");if(savedTheme)document.documentElement.dataset.theme=savedTheme;
- const themeBtn=document.querySelector("#dark-mode-toggle"), icon=themeBtn?.querySelector(".theme-icon");
- const syncTheme=()=>{const light=document.documentElement.dataset.theme==="light";if(themeBtn){themeBtn.setAttribute("aria-pressed",String(light));themeBtn.setAttribute("aria-label",light?"تفعيل الوضع الداكن":"تفعيل الوضع الفاتح");}if(icon)icon.textContent=light?"☀":"☾"};
- if(themeBtn && !window.__streamxThemeBound){window.__streamxThemeBound=true;themeBtn.addEventListener("click",()=>{const light=document.documentElement.dataset.theme==="light";document.documentElement.dataset.theme=light?"dark":"light";localStorage.setItem("streamx-theme",light?"dark":"light");syncTheme()});syncTheme();}
 });
 </script><script src="/cccam/src/components/cookie-consent.js" defer></script></body></html>
