@@ -10,7 +10,7 @@ for(const pattern of [
   /<meta[^>]+name="description"/i,
   /<link[^>]+rel="canonical"/i,
   /<title>[^<]+<\/title>/i,
-  /<link[^>]+rel="stylesheet"[^>]+src\/styles\/global\.css/i
+  /<link[^>]+rel="stylesheet"[^>]+href="src\/styles\/global\.css/i
 ]){if(!pattern.test(html))fail("index.html quality check failed: "+pattern)}
 if(/cdn\.tailwindcss\.com/i.test(html))fail("Tailwind CDN must not be used in production.");
 const pages=["categories/iptv.html","posts/cccam-guide.html","posts/iptv-github.html","about.html","contact.html","terms.html","privacy.html"];
