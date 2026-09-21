@@ -40,7 +40,7 @@ a:hover{text-decoration:none}
 .panel,.glass-panel{background:linear-gradient(135deg,rgba(17,24,39,.78),rgba(11,15,25,.92));border:1px solid var(--border);box-shadow:var(--shadow);border-radius:22px}
 .glass-panel{backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
 .muted{color:var(--muted);line-height:1.9}
-.stats,.tools-grid,.playlist-grid{display:grid;gap:16px}
+.stats,.tools-grid,.playlist-grid{display:grid;gap:16px}.tools-grid{grid-template-columns:repeat(2,1fr)}.link-card{display:block;padding:20px}
 .stats{grid-template-columns:repeat(4,1fr);margin:18px 0}
 .stat{padding:20px}.stat strong{display:block;font-size:1.7rem;color:#fff}
 .tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
